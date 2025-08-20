@@ -1,1 +1,251 @@
-HELLO WORLD
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jason C. D'Souza — Portfolio</title>
+  <style>
+    :root{
+      --accent:#6b46c1; /* violet */
+      --muted:#666;
+      --bg:#fbfbfd;
+      --card:#ffffff;
+      --max-width:980px;
+      --gap:18px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111;line-height:1.45}
+    .wrap{max-width:var(--max-width);margin:28px auto;padding:22px}
+
+    /* Header */
+    header{display:flex;gap:20px;align-items:center;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(107,70,193,0.06),transparent);}
+    .meta{flex:1}
+    .name{font-size:1.6rem;margin:0}
+    .role{color:var(--muted);margin-top:6px}
+    .contact{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:0.9rem}
+    .contact a{color:var(--accent);text-decoration:none}
+    .avatar{width:120px;height:120px;border-radius:10px;overflow:hidden;flex-shrink:0}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Navigation */
+    nav{display:flex;gap:12px;margin:18px 0;flex-wrap:wrap}
+    nav a{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--accent);background:transparent;border:1px solid rgba(107,70,193,0.08);font-weight:600}
+
+    /* Sections */
+    section{margin:14px 0;padding:16px;background:var(--card);border-radius:10px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+    h2{margin:0 0 8px 0;font-size:1.05rem}
+    h3{margin:0 0 6px 0;font-size:0.98rem}
+    .muted{color:var(--muted);font-size:0.92rem}
+
+    /* Project / Card */
+    .card{padding:12px;border-radius:8px;border:1px solid rgba(15,15,15,0.03);background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent)}
+    .card .meta{display:flex;justify-content:space-between;align-items:center}
+    .card .links a{display:inline-block;margin-left:8px;font-size:0.9rem}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .tag{font-size:0.8rem;padding:4px 8px;border-radius:999px;background:rgba(107,70,193,0.08);color:var(--accent)}
+
+    /* Achievements list */
+    .ach-list{display:grid;gap:8px}
+    .ach-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;border:1px dashed rgba(0,0,0,0.04)}
+    .ach-item .left{max-width:78%}
+
+    /* Skills */
+    .skill-list{display:flex;flex-direction:column;gap:8px}
+    .skill-item{display:flex;justify-content:space-between;align-items:center}
+
+    /* Footer */
+    footer{margin-top:12px;padding:12px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+    /* Responsive */
+    @media (max-width:820px){
+      header{flex-direction:column;align-items:flex-start}
+      .grid{grid-template-columns:1fr}
+      .avatar{width:96px;height:96px}
+      nav{overflow:auto}
+    }
+
+    /* Print-friendly */
+    @media print{
+      :root{background:white}
+      body{background:white;color:black}
+      nav, button#printBtn{display:none}
+      header{background:transparent;border-radius:0;padding:0}
+      .wrap{padding:0;margin:0}
+      section{page-break-inside:avoid;border:0;padding:0}
+      a::after{content:" (" attr(href) ")"}
+    }
+
+    /* Utilities */
+    .muted-small{color:var(--muted);font-size:0.85rem}
+    .mb{margin-bottom:10px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="meta">
+        <h1 class="name">Jason C. D'Souza</h1>
+        <div class="role">Computer Engineering Student — University of San Agustin (2022–2026)</div>
+        <div class="contact">
+          <div class="muted-small">Balabag Pavia, Iloilo City, Philippines</div>
+          <div class="muted-small">Email: <a href="mailto:jasouzax@gmail.com">jasouzax@gmail.com</a></div>
+          <div class="muted-small">Phone: <a href="tel:+639282543420">+63 928 254 3420</a></div>
+          <div class="muted-small">Git: <a href="https://github.com/jasouza-git" target="_blank" rel="noopener">github.com/jasouza-git</a></div>
+          <div class="muted-small">LinkedIn: <a href="https://www.linkedin.com/in/jasoncdsouza" target="_blank" rel="noopener">/in/jasoncdsouza</a></div>
+          <div class="muted-small">Facebook: <a href="https://www.facebook.com/jasouza.fb" target="_blank" rel="noopener">facebook.com/jasouza.fb</a></div>
+        </div>
+      </div>
+      <div class="avatar">
+        <img src="prof.jpg" alt="Jason C. D'Souza — profile photo">
+      </div>
+    </header>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <button id="printBtn" onclick="window.print()" style="margin-left:auto;padding:8px 12px;border-radius:8px;border:0;background:var(--accent);color:white;font-weight:600">Print / Save PDF</button>
+    </nav>
+
+    <section id="about">
+      <h2>About</h2>
+      <p class="muted">I am a passionate Computer Engineering student with strong experience across programming, web development, systems administration, AI, robotics and game development. I prefer hands-on work and open-source tooling and have a decade of self-directed programming practice coupled with competition experience.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="meta">
+            <div>
+              <h3>GDSC Website</h3>
+              <div class="muted-small">Web project — hosted</div>
+            </div>
+            <div class="links"><a href="https://gdsc-usa.web.app" target="_blank" rel="noopener">Visit</a></div>
+          </div>
+          <p class="muted">A website built for the Google Developer Student Clubs chapter (demo site).</p>
+          <div class="tags"><span class="tag">Web</span><span class="tag">Firebase</span></div>
+        </div>
+
+        <div class="card">
+          <div class="meta">
+            <div>
+              <h3>SanAg Inventory Website</h3>
+              <div class="muted-small">Inventory management system</div>
+            </div>
+            <div class="links"><a href="https://sanag-inventory.ct.ws" target="_blank" rel="noopener">Visit</a></div>
+          </div>
+          <p class="muted">Full-stack inventory site using LAMP/LEMP patterns and modern JS for UI interactions.</p>
+          <div class="tags"><span class="tag">Full-stack</span><span class="tag">LAMP/LEMP</span></div>
+        </div>
+
+        <div class="card">
+          <div class="meta">
+            <div>
+              <h3>Galactic Strike</h3>
+              <div class="muted-small">Multiplayer HTML5 game</div>
+            </div>
+            <div class="links"><a href="https://github.com/jasouza-git/galactic-strike" target="_blank" rel="noopener">Code</a></div>
+          </div>
+          <p class="muted">A multiplayer 2D space arena playable on phones — created for CpE 2023 showcase booth.</p>
+          <div class="tags"><span class="tag">Game</span><span class="tag">HTML5</span></div>
+        </div>
+
+        <div class="card">
+          <div class="meta">
+            <div>
+              <h3>Nobel City — Economy Simulator</h3>
+              <div class="muted-small">Indie game (Calle Real St. Indie Game Showdown)</div>
+            </div>
+            <div class="links"><a href="https://github.com/jasouza-git/noble-city" target="_blank" rel="noopener">Code</a></div>
+          </div>
+          <p class="muted">An economy simulator set in Iloilo City. Honored at Calle Real (2nd place).</p>
+          <div class="tags"><span class="tag">Game</span><span class="tag">Design</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <h2>Achievements & Competitions</h2>
+      <div class="ach-list">
+        <div class="ach-item"><div class="left"><strong>ICpEP National C Programming Competition</strong> <div class="muted-small">Champion — May 2025</div></div><div><a href="https://www.facebook.com/share/p/16pWpzRaNC" target="_blank" rel="noopener">Link</a></div></div>
+
+        <div class="ach-item"><div class="left"><strong>ICpEP National C Programming Competition</strong> <div class="muted-small">2nd place — April 2024</div></div><div><a href="https://www.facebook.com/share/p/17AhtWDFaq" target="_blank" rel="noopener">Link</a></div></div>
+
+        <div class="ach-item"><div class="left"><strong>StackLeague Celestial Gold Rush</strong> <div class="muted-small">Champion — July 2023</div></div><div><a href="https://www.facebook.com/share/p/16Rs7jKHQu" target="_blank" rel="noopener">Link</a></div></div>
+
+        <div class="ach-item"><div class="left"><strong>ICpEP National Python Programming Competition</strong> <div class="muted-small">Champion — December 2022</div></div><div class="muted-small">—</div></div>
+
+        <div class="ach-item"><div class="left"><strong>HackforGov Cyber Challenge 2023</strong> <div class="muted-small">2nd place — August 2023</div></div><div><a href="https://www.facebook.com/share/1aASBU9AXu" target="_blank" rel="noopener">Link</a></div></div>
+
+        <div class="ach-item"><div class="left"><strong>Western Visayas AI Hackathon</strong> <div class="muted-small">Champion — August 2024</div></div><div><a href="https://www.facebook.com/share/1AwRGGKjdJ" target="_blank" rel="noopener">Link</a></div></div>
+
+        <div class="ach-item"><div class="left"><strong>Koms AI Week 2023 (Eva Messenger Chatbot)</strong> <div class="muted-small">May 2023</div></div><div><a href="https://www.facebook.com/share/v/1GaogRAdfT" target="_blank" rel="noopener">Link</a></div></div>
+
+        <div class="ach-item"><div class="left"><strong>packetHACKS 2024 — Internet of Things Conference</strong> <div class="muted-small">Top 10 Finalist — May 2024</div></div><div><a href="https://www.facebook.com/share/p/1LuyEGu5Vk" target="_blank" rel="noopener">Link</a></div></div>
+
+        <div class="ach-item"><div class="left"><strong>Warrior Crusade's: Game Development Hackathon</strong> <div class="muted-small">2nd place — April 2024 — Aswang King</div></div><div><a href="https://www.facebook.com/share/p/16p9VTVdiu" target="_blank" rel="noopener">Link</a></div></div>
+
+        <div class="ach-item"><div class="left"><strong>Calle Real St. Indie Game Showdown</strong> <div class="muted-small">2nd place — October 2024 — Nobel City</div></div><div><a href="https://www.facebook.com/share/19Lbd95FjT" target="_blank" rel="noopener">Link</a></div></div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div>
+          <h3>Programming</h3>
+          <p class="muted-small">10 years of programming experience (self-taught). Comfortable in C, Python, JavaScript and systems-level scripting.</p>
+          <div class="skill-list">
+            <div class="skill-item"><div>Competitions & Efficiency</div><div class="muted-small">ICpEP & StackLeague</div></div>
+            <div class="skill-item"><div>Languages & Tools</div><div class="muted-small">C, Python, JavaScript, PyTorch, Ollama, YOLO</div></div>
+          </div>
+        </div>
+        <div>
+          <h3>Web Development</h3>
+          <p class="muted-small">Full-stack experience — LAMP/LEMP, MEVN, Flask stacks.</p>
+          <div class="skill-list">
+            <div class="skill-item"><div>Key projects</div><div class="muted-small">GDSC Website, SanAg Inventory</div></div>
+            <div class="skill-item"><div>Tools</div><div class="muted-small">HTML/CSS/JS, Node, PHP, MySQL, Firebase</div></div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Systems & Cybersecurity</h3>
+          <p class="muted-small">Debian/Linux admin, security challenges and CTF-style competitions.</p>
+        </div>
+        <div>
+          <h3>AI & Robotics</h3>
+          <p class="muted-small">YOLO, PyTorch, Ollama, Raspberry Pi, Arduino — applications in vision and embedded ML.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>University of San Agustin <span class="muted-small">(2022–2026)</span></h3>
+        <div class="muted-small">Bachelor of Science in Computer Engineering</div>
+        <hr />
+        <h3>Central Philippine University <span class="muted-small">(2016–2020)</span></h3>
+        <div class="muted-small">STEM Strand (Senior High)</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="muted">Email: <a href="mailto:jasouzax@gmail.com">jasouzax@gmail.com</a> • Phone: <a href="tel:+639282543420">+63 928 254 3420</a></p>
+      <p class="muted">GitHub: <a href="https://github.com/jasouza-git" target="_blank" rel="noopener">github.com/jasouza-git</a> • LinkedIn: <a href="https://www.linkedin.com/in/jasoncdsouza" target="_blank" rel="noopener">/in/jasoncdsouza</a></p>
+    </section>
+
+    <footer>
+      <div>© Jason C. D'Souza — Portfolio</div>
+    </footer>
+  </div>
+</body>
+</html>
